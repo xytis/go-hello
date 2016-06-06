@@ -1,7 +1,11 @@
 
-.PHONY: all
+.PHONY: build push
 
-all: bin/hello
+build: bin/hello
+	docker build -t xytis/hello .
+
+push: build
+	docker push xytis/hello
 
 bin/:
 	mkdir bin/
